@@ -1,7 +1,6 @@
 require('barnabait.remap')
 require('barnabait.set')
 require('barnabait.lazy')
-require('lazy').setup(plugins)
 
 vim.o.clipboard = "unnamedplus"
 local opts = { noremap = true, silent = true }

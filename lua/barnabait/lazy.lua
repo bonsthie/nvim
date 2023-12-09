@@ -24,7 +24,7 @@ require("lazy").setup({
     { "nvim-telescope/telescope.nvim", tag = '0.1.2' },
     { "ellisonleao/gruvbox.nvim", priority = 1000 },
     { "nvim-treesitter/nvim-treesitter", run = ':TSUpdate' },
-    "nvim-treesitter/playground",
+--	{"nvim-treesitter/playground", run = ':InspectTree'},
     "theprimeagen/harpoon",
     "mbbill/undotree",
     "tpope/vim-fugitive",
@@ -66,6 +66,7 @@ require("lazy").setup({
             require("nvim-surround").setup({})
         end
     },
-    "wintermute-cell/gitignore.nvim"
+    {"wintermute-cell/gitignore.nvim", run = ':Gitignore'},
+	{'cacharle/c_formatter_42.vim', run = 'CFormatter42'}
 })
 
