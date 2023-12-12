@@ -2,10 +2,9 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-local lspconfig = require('lspconfig')
 local cache_dir = vim.fn.stdpath('cache')
 
-lspconfig.clangd.setup {
+lsp.clangd.setup {
   cmd = {"clangd", "--compile-commands-dir=" .. cache_dir},
   -- Other configuration options...
 }
