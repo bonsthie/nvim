@@ -1,15 +1,3 @@
--- ************************************************************************** --
---                                                                            --
---                                                        :::      ::::::::   --
---   42header.lua                                       :+:      :+:    :+:   --
---                                                    +:+ +:+         +:+     --
---   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        --
---                                                +#+#+#+#+#+   +#+           --
---   Created: 2023/09/16 00:38:46 by bbonnet           #+#    #+#             --
---   Updated: 2023/12/09 21:32:20 by babonnet         ###   ########.fr       --
---                                                                            --
--- ************************************************************************** --
-
 local header = require("42header")
 header.setup({
   length = 80, -- headers of different sizes are incompatible with each other
