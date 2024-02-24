@@ -3,12 +3,20 @@ local lsp = require("lsp-zero")
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-  'tsserver',
-  'rust_analyzer',
+  'lua_ls',
+  'clangd',
 })
 
 -- Fix Undefined global 'vim'
-lsp.nvim_workspace()
+lsp.configure('lua_ls', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+})
 
 
 local cmp = require('cmp')
@@ -40,7 +48,8 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
-  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+  vim.keymap.set("n", "gd", vim.lsp.buf.declaration, {buffer = bufnr})
+  vim.keymap.set("n", "gD", vim.lsp.buf.definition, {buffer = bufnr})
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
   vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
@@ -57,3 +66,4 @@ lsp.setup()
 vim.diagnostic.config({
     virtual_text = true
 })
+
