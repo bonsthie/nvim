@@ -4,6 +4,7 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   'lua_ls',
+  'bash_ls',
   'clangd',
 })
 
