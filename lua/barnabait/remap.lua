@@ -1,4 +1,5 @@
-vim.g.mapleader = ' ' 
+vim.g.mapleader = ' '
+vim.g.localleader = ' '
 vim.keymap.set('n' , "<leader>pv", vim.cmd.Ex)
 
 -- Create a function to perform both 'Go to Definition' and centering
