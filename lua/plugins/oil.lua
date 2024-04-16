@@ -8,7 +8,7 @@ return ({
         default_file_explorer = true,
 			keymaps = {
 				['-'] = { "<CMD>Oil<CR>", desc = "Open parent directory" },
-				['<C-h>'] = false,
+				['<C-h>'] = false, -- unbind C-hjkl for conpatibility with tmux vim mode
 				['<C-j>'] = false,
 				['<C-k>'] = false,
 				['<C-l>'] = false
