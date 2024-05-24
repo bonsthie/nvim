@@ -2,6 +2,8 @@
 
 Welcome to my Neovim configuration repository, tailored for 42 students and designed for efficient low-level development in C/C++. This lightweight setup is optimized to provide a seamless coding experience with essential plugins and configurations suitable for resource-constrained environments. 🛠️🎨
 
+![Neovim Configuration Screenshot](nvimConfig.png)
+
 ## Features 🌟
 
 - **Lazy Loading:** Configurations are optimized for performance with lazy loading of plugins using ```lazy.nvim```.
