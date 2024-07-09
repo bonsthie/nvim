@@ -20,7 +20,7 @@ Welcome to my Neovim configuration repository, tailored for 42 students and desi
 
 1. Clone the repository to your desired location:
    ```
-   git clone https://github.com/yourusername/your-neovim-config.git ~/.config/nvim
+   git clone https://github.com/bonsthie/nvim ~/.config
    ```
 2. Start Neovim and the plugins will be installed automatically on first run, thanks to the ```lazy.nvim``` setup.
 3. To enable C/C++ formatting, install the C Formatter:
