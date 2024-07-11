@@ -1,0 +1,3 @@
+[submodule "llvm-mca.nvim"]
+	path = llvm-mca.nvim
+	url = git@github.com:bonsthie/llvm-mca.nvim.git

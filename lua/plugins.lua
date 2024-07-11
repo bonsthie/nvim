@@ -8,5 +8,6 @@ return ({
     "christoomey/vim-tmux-navigator",
     {"wintermute-cell/gitignore.nvim", run = ':Gitignore'},
 	{'cacharle/c_formatter_42.vim', run = 'CFormatter42'},
-	'terrortylor/nvim-comment'
+	'terrortylor/nvim-comment',
+	{dir = "~/.config/nvim/lua/my_plugins/llvm-mca.nvim"},
 })
