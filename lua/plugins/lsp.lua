@@ -50,6 +50,13 @@ return {
 						}
 					}
 				end,
+				["clangd"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.clangd.setup {
+						capabilities = capabilities,
+						filetypes = { "c", "cpp", "objc", "objcpp", "tpp" }, -- Add tpp to filetypes
+					}
+				end,
 			}
 		})
 
@@ -86,5 +93,8 @@ return {
 				prefix = "",
 			},
 		})
+        
+        -- Ensure that LSP recognizes .tpp files
+        vim.api.nvim_command('autocmd BufRead,BufNewFile *.tpp set filetype=cpp')
 	end
 }
