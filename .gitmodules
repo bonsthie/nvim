@@ -1,3 +1,3 @@
-[submodule "llvm-mca.nvim"]
-	path = llvm-mca.nvim
-	url = git@github.com:bonsthie/llvm-mca.nvim.git
+[submodule "lua/my_plugins/NotifUpdate.nvim"]
+	path = lua/my_plugins/NotifUpdate.nvim
+	url = git@github.com:bonsthie/NotifUpdate.nvim.git
