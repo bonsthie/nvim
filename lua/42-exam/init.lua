@@ -14,8 +14,8 @@ end
 -- Prepend to the runtime path
 vim.opt.rtp:prepend(lazypath)
 
-require('barnabait.remap')
-require('barnabait.set')
+require('42-exam.remap')
+require('42-exam.set')
 require("lazy").setup("plugins", {
 	change_detection = {
 		notify = false;
@@ -33,4 +33,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- clipbaord set to the pc default "*
 vim.o.clipboard = "unnamedplus"

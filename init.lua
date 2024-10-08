@@ -6,8 +6,10 @@
 --   By: babonnet <babonnet@42angouleme.fr>         +#+  +:+       +#+        --
 --                                                +#+#+#+#+#+   +#+           --
 --   Created: 2024/04/16 16:29:45 by babonnet          #+#    #+#             --
---   Updated: 2024/07/10 20:52:00 by babonnet         ###   ########.fr       --
+--   Updated: 2024/10/08 18:58:06 by babonnet         ###   ########.fr       --
 --                                                                            --
 -- ************************************************************************** --
 
-require('barnabait')
+if os.getenv("CUSTOM_NVIM") then
+	require('42-exam')
+end
