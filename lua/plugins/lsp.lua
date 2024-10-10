@@ -1,8 +1,13 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
+		{
+            dir = "/home/bonsthie/Documents/code/nvim/mason.nvim",
+        },
+        -- Use local version of mason-lspconfig.nvim
+        {
+            dir = "/home/bonsthie/Documents/code/nvim/mason-lspconfig.nvim",
+        },
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
@@ -53,6 +58,20 @@ return {
 				["clangd"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.clangd.setup {
+						cmd = {
+							"clangd",
+							"--background-index",
+							"-j=12",
+							"--query-driver=/usr/bin/**/clang-*,/bin/clang,/bin/clang++,/usr/bin/gcc,/usr/bin/g++",
+							"--clang-tidy",
+							"--clang-tidy-checks=*",
+							"--all-scopes-completion",
+							"--cross-file-rename",
+							"--completion-style=detailed",
+							"--header-insertion-decorators",
+							"--header-insertion=iwyu",
+							"--pch-storage=memory",
+						},
 						capabilities = capabilities,
 						filetypes = { "c", "cpp", "objc", "objcpp", "tpp" }, -- Add tpp to filetypes
 					}
@@ -93,8 +112,5 @@ return {
 				prefix = "",
 			},
 		})
-        
-        -- Ensure that LSP recognizes .tpp files
-        vim.api.nvim_command('autocmd BufRead,BufNewFile *.tpp set filetype=cpp')
 	end
 }
