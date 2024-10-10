@@ -1,0 +1,3 @@
+[submodule "lua/my_plugins/NotifUpdate.nvim"]
+	path = lua/my_plugins/NotifUpdate.nvim
+	url = git@github.com:bonsthie/NotifUpdate.nvim.git
