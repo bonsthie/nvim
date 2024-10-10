@@ -44,6 +44,10 @@ Welcome to my Neovim configuration repository, tailored for 42 students and desi
   - ```<leader>11``` - Insert or update the 42 school header with ```42header.nvim```.
   - ```:CFormatter42``` - format the code at 42 norm
 
+- **Command for sharing code** *-brought you by [adjoly](https://github.com/keyzox71)*
+  - ```:W``` - Copy entire file to wastebin with ```wastebin.nvim```
+  - ```:'<,'>W``` - Copy current selection (just tap "**:**" when you have selected text)
+
 ## Customization 🛠
 
 You can customize various aspects by editing the Lua files located in the ```lua``` folder. Each file is segmented to handle different configurations like key mappings, plugin setups, and appearance settings.
