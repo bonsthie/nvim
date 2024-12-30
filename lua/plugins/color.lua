@@ -1,13 +1,16 @@
-
 return {
-	'rose-pine/neovim',
-	name = 'rose-pine',
-	config = function()
-		vim.opt.termguicolors = true
-		vim.o.background = "dark" -- or "light" for light mode
-		-- Set initial theme
-		vim.g.current_theme = 'rose-pine'
-		vim.cmd('colorscheme rose-pine')
-		vim.cmd [[highlight Normal guibg=NONE ctermbg=NONE]]
-	end
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    opts = {
+        theme = 'rose-pine', -- Default theme
+		background = "dark"
+    },
+    config = function(_, opts)
+        vim.opt.termguicolors = true
+        vim.o.background = opts.background
+        local theme = opts.theme or 'rose-pine' -- Use override or default
+        vim.g.current_theme = theme
+        vim.cmd('colorscheme ' .. theme)
+        vim.cmd [[highlight Normal guibg=NONE ctermbg=NONE]]
+    end
 }
