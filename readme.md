@@ -41,8 +41,8 @@ Welcome to my Neovim configuration repository, tailored for 42 students and desi
 - `:CFormatter42` - Format code according to 42 norm (if the plugin is enabled).
 
 ### **Command for sharing code** *-brought you by [adjoly](https://github.com/keyzox71)*
-  - ```:W``` - Copy entire file to wastebin with ```wastebin.nvim```
-  - ```:'<,'>W``` - Copy current selection (just tap "**:**" when you have selected text)
+  - ```:WastPaste``` - Copy entire file to wastebin with ```wastebin.nvim```
+  - ```:'<,'>WastPaste``` - Copy current selection (just tap "**:**" when you have selected text)
 
 ## Customization 🔧
 
