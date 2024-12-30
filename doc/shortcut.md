@@ -1,7 +1,7 @@
 # Keymap Shortcuts for Neovim
 
 ## **Leader Key**
-- **`<leader>`**: `space key \' \'`
+- **`<leader>`**: `space key ' '`
 
 ---
 
