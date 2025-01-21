@@ -22,7 +22,7 @@ M.setup = function()
 		capabilities = capabilities,
 		filetypes = { "c", "cpp", "objc", "objcpp", "tpp" },
 		on_attach = function(_, bufnr)
-			M.new_keymap(bufnr, "n", "<leader>qf", M.quick_fix_first)
+			M.new_keymap(bufnr, "n", "<C-q>", M.quick_fix_first)
 		end,
 	}
 end
