@@ -1,7 +1,7 @@
 local M = {}
 
 function M.modify_opts(opts)
-    opts.enable = false
+    opts.enable = true
     return opts
 end
 

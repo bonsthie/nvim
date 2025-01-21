@@ -8,4 +8,5 @@ return ({
 	"christoomey/vim-tmux-navigator",
 	{ "wintermute-cell/gitignore.nvim", run = ':Gitignore' },
 	'terrortylor/nvim-comment',
+	'edluffy/hologram.nvim'
 })
