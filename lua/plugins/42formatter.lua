@@ -14,7 +14,6 @@ return {
 		if ok and custom.modify_opts then
 			default_opts = custom.modify_opts(default_opts)
 		end
-		print(default_opts.enable)
 
 		return default_opts.enable
 	end
