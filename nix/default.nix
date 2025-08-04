@@ -1,21 +1,28 @@
-{ pkgs }:
+{
+  lib ? pkgs.lib,
+  pkgs,
+}:
 let
-  scripts2ConfigFiles = dir:
-    let
-      configDir = pkgs.stdenv.mkDerivation {
-        name = "nvim-${dir}-configs";
-        src = ./${dir};
-        installPhase = ''
-          mkdir -p $out/
-          cp ./* $out/
-        '';
-      };
-    in builtins.map (file: "${configDir}/${file}")
-    (builtins.attrNames (builtins.readDir configDir));
+  rc = import ../lua { inherit pkgs; };
+  extrapkgs = with pkgs; [
+    clang-tools
+    ripgrep
+    lua-language-server
+  ];
+in
+pkgs.wrapNeovim pkgs.neovim-unwrapped {
+  extraMakeWrapperArgs = builtins.concatStringsSep " " (
+    lib.optional (extrapkgs != [ ]) ''--prefix PATH : ${lib.makeBinPath extrapkgs}''
+  );
 
-  sourceConfigFiles = files:
-    builtins.concatStringsSep "\n" (builtins.map (file:
-      "source ${file}") files);
-
-  vim = scripts2ConfigFiles "vim";
-in sourceConfigFiles vim
+  configure = {
+    viAlias = true;
+    vimAlias = true;
+    extraWrapperArgs = ''--set XDG_CONFIG_HOME ${rc}/config'';
+    customRC = ''
+      let $XDG_CONFIG_HOME="${rc}/config"
+      set runtimepath^=${rc}/config/nvim
+      source ${rc}/config/nvim/init.lua
+    '';
+  };
+}
