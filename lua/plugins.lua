@@ -1,7 +1,6 @@
 -- random stuff
 return ({
 	{ "folke/neoconf.nvim",             cmd = "Neoconf" },
-	"folke/neodev.nvim",
 	"nvim-lua/plenary.nvim",
 	"nvim-lua/popup.nvim",
 	'ThePrimeagen/vim-be-good',

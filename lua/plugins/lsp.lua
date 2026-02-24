@@ -1,6 +1,7 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
+		"folke/neodev.nvim",
 		"mason-org/mason.nvim",
 		"mason-org/mason-lspconfig.nvim",
 		"hrsh7th/cmp-nvim-lsp",
@@ -13,33 +14,25 @@ return {
 		"j-hui/fidget.nvim",
 	},
 	config = function()
-		local cmp = require('cmp')
-		local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
+		require("neodev").setup({
+			library = { plugins = true, types = true },
+		})
 		require("fidget").setup({})
 		require("mason").setup()
-		require("mason-lspconfig").setup({
-			ensure_installed = {
-				"lua_ls",
-				"clangd",
-			},
-			handlers = {
-				function(server_name)
-					require("lspconfig")[server_name].setup {
-						capabilities = capabilities,
-					}
-				end,
 
-				["lua_ls"] = function()
-					require('lsp.lua').setup()
-				end,
-				["clangd"] = function()
-					require('lsp.clang').setup()
-				end,
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			},
+
+		local mason_lspconfig = require("mason-lspconfig")
+		mason_lspconfig.setup({
+			ensure_installed = { "lua_ls", "clangd" },
 		})
 
+		require("lsp.lua").setup(capabilities)
+		require("lsp.clang").setup(capabilities)
+
+
+		local cmp = require('cmp')
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 		require('luasnip.loaders.from_vscode').lazy_load()
@@ -72,7 +65,7 @@ return {
 				focusable = false,
 				style     = "minimal",
 				border    = "rounded",
-				source    = "always",
+				source    = true,
 				header    = "",
 				prefix    = "",
 			},

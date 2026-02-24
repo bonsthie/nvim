@@ -1,8 +1,7 @@
 local M = {}
 
-M.setup = function()
+M.setup = function(capabilities)
 	local lspconfig = require("lspconfig")
-	local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 	lspconfig.clangd.setup {
 		cmd = {
