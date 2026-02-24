@@ -13,3 +13,4 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.o.clipboard = "unnamedplus"
 
 require("barnabait.lazy").setup()
+require("barnabait.utils.git").setup()

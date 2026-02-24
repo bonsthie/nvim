@@ -31,3 +31,4 @@ vim.opt.updatetime = 50
 vim.filetype.add({ extension = { rtss = "css" } })
 vim.filetype.add({ extension = { mm = "cpp" } })
 vim.filetype.add({ extension = { ll = "llvm" } })
+vim.filetype.add({ extension = { inc = "asm" } })

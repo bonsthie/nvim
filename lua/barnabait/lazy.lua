@@ -26,7 +26,7 @@ function M.setup()
 		change_detection = { notify = false },
 	})
 
-	require("barnabait.override").load_plugins()
+	-- require("barnabait.override").load_plugins()
 end
 
 return M
