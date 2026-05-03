@@ -80,14 +80,14 @@ end
 local function map_iteration_keys(bufnr)
   local opts = { buffer = bufnr, silent = true }
 
-  vim.keymap.set("n", "]q", function()
+  vim.keymap.set("n", "]Q", function()
     local idx = move_in_quickfix(1)
     if idx then
       M.open(idx)
     end
   end, opts)
 
-  vim.keymap.set("n", "[q", function()
+  vim.keymap.set("n", "[Q", function()
     local idx = move_in_quickfix(-1)
     if idx then
       M.open(idx)

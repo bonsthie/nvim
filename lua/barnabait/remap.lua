@@ -41,3 +41,4 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.api.nvim_create_user_command('W', 'w', {})
 
+vim.keymap.set("n", "<leader>lr", "<cmd>Lazy reload gh.nvim<CR>")

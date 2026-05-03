@@ -1,9 +1,7 @@
 local M = {}
 
 M.setup = function(capabilities)
-	local lspconfig = require("lspconfig")
-
-	lspconfig.clangd.setup {
+	vim.lsp.config("clangd", {
 		cmd = {
 			"clangd",
 			"--background-index",
@@ -23,7 +21,9 @@ M.setup = function(capabilities)
 		on_attach = function(_, bufnr)
 			M.new_keymap(bufnr, "n", "<C-q>", M.quick_fix_first)
 		end,
-	}
+	})
+
+	vim.lsp.enable("clangd")
 end
 
 M.quick_fix_first = function()
