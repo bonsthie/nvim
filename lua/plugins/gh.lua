@@ -1,0 +1,3 @@
+return {
+	"bonsthie/gh.nvim"
+}

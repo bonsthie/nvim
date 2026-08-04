@@ -31,6 +31,12 @@ return {
 		require("lsp.lua").setup(capabilities)
 		require("lsp.clang").setup(capabilities)
 
+		if not vim.api.nvim_get_commands({}).LspInfo then
+			vim.api.nvim_create_user_command("LspInfo", "checkhealth vim.lsp", {
+				desc = "Show LSP health and status",
+			})
+		end
+
 
 		local cmp = require('cmp')
 		local cmp_select = { behavior = cmp.SelectBehavior.Select }
